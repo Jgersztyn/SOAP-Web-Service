@@ -7,6 +7,9 @@ Public Class FormTrackingDisplay
     Private connectionString As String =
         "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ResultDatabase.mdf;Integrated Security=True"
 
+    'Initialize this object so a request can be generated
+    Dim soapRequest As CreateRequest
+
     'Helper function used to create and validate the connection
     'May not be necessary, used for testing
     Private Sub ConnectionAttempt()
@@ -26,6 +29,10 @@ Public Class FormTrackingDisplay
 
         'make TEST call to insert data before displaying the form
         InsertTempData()
+
+        soapRequest = New CreateRequest()
+        'soapRequest.GenerateSoapRequest()
+        soapRequest.Execute()
 
     End Sub
 
@@ -57,7 +64,7 @@ Public Class FormTrackingDisplay
         Dim dataAdapter As New SqlDataAdapter(com, connectionString)
         Dim commandBuilder = New SqlCommandBuilder(dataAdapter)
         Dim ds As New DataSet()
-        dataAdapter.Fill(ds) ' Try <--- , "TrackingNumbers"
+        dataAdapter.Fill(ds, "TrackingNumbers") ' Try <--- , "TrackingNumbers"
 
         TrackingDataGridView.ReadOnly = True 'Ensure displayed tracking data cannot be modified
         TrackingDataGridView.DataSource = ds.Tables(0)

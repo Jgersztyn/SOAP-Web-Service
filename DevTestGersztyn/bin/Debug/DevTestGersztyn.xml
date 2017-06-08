@@ -22,6 +22,21 @@ DevTestGersztyn
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="M:DevTestGersztyn.CreateRequest.GenerateRequestString">
+ <summary>
+ Generate the request stream for this given request
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.CreateRequest.Execute">
+ <summary>
+ 
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.CreateRequest.CreateWebRequest">
+ <summary>
+ Create a soap webrequest to the given URL
+ </summary>
+</member>
 <member name="T:DevTestGersztyn.ResultDatabaseDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.
