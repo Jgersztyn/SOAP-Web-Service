@@ -1,5 +1,6 @@
 ﻿Imports System.Data.DataSet
 Imports System.Data.SqlClient
+Imports DevTestGersztyn.CreateRequest
 
 Public Class FormTrackingDisplay
 
@@ -28,7 +29,8 @@ Public Class FormTrackingDisplay
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'make TEST call to insert data before displaying the form
-        InsertTempData()
+        'Remove this once the real data comes in
+        'InsertTempData()
 
         soapRequest = New CreateRequest()
         'soapRequest.GenerateSoapRequest()
