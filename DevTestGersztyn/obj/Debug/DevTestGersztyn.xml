@@ -52,6 +52,39 @@ DevTestGersztyn
  </summary>
  <param name="resultStr"> The resulting XML request that is going to be parsed </param>
 </member>
+<member name="M:DevTestGersztyn.FormTrackingDisplay.ConnectionAttempt">
+ <summary>
+ Helper function used to create and validate the connection
+ May not be necessary but used for testing
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.FormTrackingDisplay.MainForm_Load(System.Object,System.EventArgs)">
+ <summary>
+ Handles the initial loading of the form
+ The main entry point of the application
+ Note that the form is generated only after the SOAP reqeust is completed
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.FormTrackingDisplay.LoadFormData">
+ <summary>
+ Populates the database with the data based on the SOAP request
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.FormTrackingDisplay.TrackingDataGridView_CellContentClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+ <summary>
+ Generates the Data Grid to display tracking numbers
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.FormTrackingDisplay.InsertData(System.Int32,System.String)">
+ <summary>
+ Inserts test data into the local DB
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.FormTrackingDisplay.DisplayButton_Click(System.Object,System.EventArgs)">
+ <summary>
+ Handles the Display Data Button on the form
+ </summary>
+</member>
 <member name="T:DevTestGersztyn.ResultDatabaseDataSet">
 <summary>
 Represents a strongly typed in-memory cache of data.

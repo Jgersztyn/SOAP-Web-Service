@@ -116,5 +116,4 @@ Public Class CreateRequest
             Next
         Next
     End Sub
-
 End Class

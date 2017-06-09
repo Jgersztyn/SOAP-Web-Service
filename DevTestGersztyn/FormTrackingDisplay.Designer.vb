@@ -27,8 +27,7 @@ Partial Class FormTrackingDisplay
         Me.TrackingDataGridView = New System.Windows.Forms.DataGridView()
         Me.ResultDatabaseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ResultDatabaseDataSet = New DevTestGersztyn.ResultDatabaseDataSet()
-        Me.TrackingIdColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TrackingNumColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TrackingNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.TrackingDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ResultDatabaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ResultDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -36,9 +35,10 @@ Partial Class FormTrackingDisplay
         '
         'DisplayButton
         '
+        Me.DisplayButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DisplayButton.Location = New System.Drawing.Point(12, 12)
         Me.DisplayButton.Name = "DisplayButton"
-        Me.DisplayButton.Size = New System.Drawing.Size(75, 23)
+        Me.DisplayButton.Size = New System.Drawing.Size(100, 35)
         Me.DisplayButton.TabIndex = 0
         Me.DisplayButton.Text = "Display Data"
         Me.DisplayButton.UseVisualStyleBackColor = True
@@ -47,14 +47,18 @@ Partial Class FormTrackingDisplay
         '
         Me.TrackingDataGridView.AllowUserToAddRows = False
         Me.TrackingDataGridView.AllowUserToDeleteRows = False
+        Me.TrackingDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TrackingDataGridView.AutoGenerateColumns = False
         Me.TrackingDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TrackingDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TrackingIdColumn, Me.TrackingNumColumn})
+        Me.TrackingDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.TrackingNumber})
         Me.TrackingDataGridView.DataSource = Me.ResultDatabaseDataSetBindingSource
         Me.TrackingDataGridView.Location = New System.Drawing.Point(12, 54)
+        Me.TrackingDataGridView.MinimumSize = New System.Drawing.Size(160, 200)
         Me.TrackingDataGridView.Name = "TrackingDataGridView"
         Me.TrackingDataGridView.ReadOnly = True
-        Me.TrackingDataGridView.Size = New System.Drawing.Size(240, 150)
+        Me.TrackingDataGridView.Size = New System.Drawing.Size(160, 200)
         Me.TrackingDataGridView.TabIndex = 1
         '
         'ResultDatabaseDataSetBindingSource
@@ -67,17 +71,11 @@ Partial Class FormTrackingDisplay
         Me.ResultDatabaseDataSet.DataSetName = "ResultDatabaseDataSet"
         Me.ResultDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'TrackingIdColumn
+        'TrackingNumber
         '
-        Me.TrackingIdColumn.HeaderText = "ID"
-        Me.TrackingIdColumn.Name = "TrackingIdColumn"
-        Me.TrackingIdColumn.ReadOnly = True
-        '
-        'TrackingNumColumn
-        '
-        Me.TrackingNumColumn.HeaderText = "Tracking Number"
-        Me.TrackingNumColumn.Name = "TrackingNumColumn"
-        Me.TrackingNumColumn.ReadOnly = True
+        Me.TrackingNumber.HeaderText = "Tracking Number"
+        Me.TrackingNumber.Name = "TrackingNumber"
+        Me.TrackingNumber.ReadOnly = True
         '
         'FormTrackingDisplay
         '
@@ -86,6 +84,7 @@ Partial Class FormTrackingDisplay
         Me.ClientSize = New System.Drawing.Size(284, 261)
         Me.Controls.Add(Me.TrackingDataGridView)
         Me.Controls.Add(Me.DisplayButton)
+        Me.MinimumSize = New System.Drawing.Size(300, 300)
         Me.Name = "FormTrackingDisplay"
         Me.Text = "Tracking Information"
         CType(Me.TrackingDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -99,6 +98,5 @@ Partial Class FormTrackingDisplay
     Friend WithEvents TrackingDataGridView As DataGridView
     Friend WithEvents ResultDatabaseDataSetBindingSource As BindingSource
     Friend WithEvents ResultDatabaseDataSet As ResultDatabaseDataSet
-    Friend WithEvents TrackingIdColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TrackingNumColumn As DataGridViewTextBoxColumn
+    Friend WithEvents TrackingNumber As DataGridViewTextBoxColumn
 End Class

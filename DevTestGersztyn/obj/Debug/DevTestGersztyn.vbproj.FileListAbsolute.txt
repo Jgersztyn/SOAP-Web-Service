@@ -10,3 +10,4 @@ C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGers
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.exe
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.xml
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.pdb
+C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.vbprojResolveAssemblyReference.cache
