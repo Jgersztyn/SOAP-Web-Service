@@ -73,6 +73,7 @@ Partial Class FormTrackingDisplay
         '
         'TrackingNumber
         '
+        Me.TrackingNumber.DataPropertyName = "TrackingNumber"
         Me.TrackingNumber.HeaderText = "Tracking Number"
         Me.TrackingNumber.Name = "TrackingNumber"
         Me.TrackingNumber.ReadOnly = True

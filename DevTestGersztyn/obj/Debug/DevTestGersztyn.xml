@@ -52,6 +52,13 @@ DevTestGersztyn
  </summary>
  <param name="resultStr"> The resulting XML request that is going to be parsed </param>
 </member>
+<member name="T:DevTestGersztyn.FormTrackingDisplay">
+ <summary>
+ A basic application used to generate a SOAP web request
+ The application generates the request in the background and informs the user that data has been loaded
+ The user can request the data to be populated inside of the form by clicking the provided button
+ </summary>
+</member>
 <member name="M:DevTestGersztyn.FormTrackingDisplay.ConnectionAttempt">
  <summary>
  Helper function used to create and validate the connection
