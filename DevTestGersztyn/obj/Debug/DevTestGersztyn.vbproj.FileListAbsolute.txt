@@ -4,10 +4,10 @@ C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGers
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\bin\Debug\DevTestGersztyn.exe
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\bin\Debug\DevTestGersztyn.pdb
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\bin\Debug\DevTestGersztyn.xml
+C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.vbprojResolveAssemblyReference.cache
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.FormTrackingDisplay.resources
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.Resources.resources
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.vbproj.GenerateResource.Cache
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.exe
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.xml
 C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.pdb
-C:\Users\omgst\documents\visual studio 2015\Projects\DevTestGersztyn\DevTestGersztyn\obj\Debug\DevTestGersztyn.vbprojResolveAssemblyReference.cache

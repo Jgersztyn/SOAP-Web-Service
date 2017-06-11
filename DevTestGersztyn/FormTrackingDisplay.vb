@@ -7,28 +7,31 @@
 ''' </summary>
 Public Class FormTrackingDisplay
 
-    'Sets the connection for the local database
-    Private connectionString As String =
-        "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ResultDatabase.mdf;Integrated Security=True"
+    'Hard codes the connection for the local database
+    'Private connectionString As String =
+    '    "Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ResultDatabase.mdf;Integrated Security=True"
+
+    'Sets the connection to the local database by pulling it from App.config
+    Private connectionStr As New _
+        SqlConnection(Configuration.ConfigurationManager.ConnectionStrings("ResultDatabaseConnectionString").ConnectionString)
     'This object is used to generate a SOAP request
     Private soapRequest As CreateRequest
 
-    ''' <summary>
-    ''' Helper function used to create and validate the connection
-    ''' May not be necessary but used for testing
-    ''' </summary>
-    Private Sub ConnectionAttempt()
-
-        Using connection As New SqlConnection(connectionString)
-            Try
-                connection.Open()
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-            'close the connection after data has been processed
-            connection.Close()
-        End Using
-    End Sub
+    '''' <summary>
+    '''' Helper function used to create and validate the connection
+    '''' May not be necessary but used for testing
+    '''' </summary>
+    'Private Sub ConnectionAttempt()
+    '    Using connection As New SqlConnection(connectionStr.ConnectionString)
+    '        Try
+    '            connection.Open()
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message)
+    '        End Try
+    '        'close the connection after data has been processed
+    '        connection.Close()
+    '    End Using
+    'End Sub
 
     ''' <summary>
     ''' Handles the initial loading of the form
@@ -77,7 +80,7 @@ Public Class FormTrackingDisplay
     ''' </summary>
     Private Sub InsertData(id As Integer, trackingNum As String)
 
-        Dim sqlConnection As New SqlConnection(connectionString)
+        Dim sqlConnection As New SqlConnection(connectionStr.ConnectionString)
         Dim cmd As New SqlCommand
 
         cmd.CommandType = CommandType.Text
@@ -86,9 +89,14 @@ Public Class FormTrackingDisplay
             & id & ", '" & trackingNum & "')"
 
         cmd.Connection = sqlConnection
-        sqlConnection.Open()
-        cmd.ExecuteNonQuery()
-        sqlConnection.Close()
+
+        Try
+            sqlConnection.Open()
+            cmd.ExecuteNonQuery()
+            sqlConnection.Close()
+        Catch ex As Exception
+            MsgBox("Failed to connect to the database.")
+        End Try
     End Sub
 
     ''' <summary>
@@ -96,13 +104,10 @@ Public Class FormTrackingDisplay
     ''' </summary>
     Private Sub DisplayButton_Click(sender As Object, e As EventArgs) Handles DisplayButton.Click
 
-        'Test call to connect with the database
-        'ConnectionAttempt()
-
         Dim query As String = "SELECT TrackingNumber FROM TrackingNumbers"
-        Dim connect As New SqlConnection(connectionString)
+        Dim connect As New SqlConnection(connectionStr.ConnectionString)
         Dim command As New SqlCommand(query, connect)
-        Dim dataAdapter As New SqlDataAdapter(query, connectionString)
+        Dim dataAdapter As New SqlDataAdapter(query, connectionStr)
         Dim table As New DataTable
         dataAdapter.Fill(table)
         TrackingDataGridView.DataSource = table

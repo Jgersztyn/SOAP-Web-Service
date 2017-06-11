@@ -15,6 +15,7 @@ Public Class CreateRequest
     ''' </summary>
     ''' <returns> A list containing all tracking numbers </returns>
     Public Function GetTrackingNumbers() As List(Of String)
+
         Return trackingNumbers
     End Function
 
@@ -55,17 +56,11 @@ Public Class CreateRequest
         Dim reader As StreamReader = New StreamReader(response.GetResponseStream())
         Dim soapResult As String = reader.ReadToEnd()
 
-        'See what we get...
-        'For testing only
-        'Console.WriteLine(soapResult)
-
         'Handles the result and parses the XML to make it useful
         ParseXML(soapResult)
-
         'Close the necessary connections before exiting
         response.Close()
         reader.Close()
-
     End Sub
 
 
@@ -82,7 +77,6 @@ Public Class CreateRequest
         request.Accept = "text/xml"
         request.Method = "POST"
         Return request
-
     End Function
 
     ''' <summary>
@@ -93,12 +87,11 @@ Public Class CreateRequest
     Private Sub ParseXML(resultStr As String)
 
         Dim xmlDoc As XmlDocument = New XmlDocument
-        xmlDoc.LoadXml(resultStr)
-
         Dim data As DataSet
         Dim reader As StringReader
-        data = New DataSet()
 
+        xmlDoc.LoadXml(resultStr)
+        data = New DataSet()
         reader = New StringReader(xmlDoc.InnerXml)
         data.ReadXml(reader)
 
@@ -106,9 +99,6 @@ Public Class CreateRequest
             For Each r As DataRow In t.Rows
                 For Each c As DataColumn In t.Columns
                     If (t.TableName = "string" And r(c.ColumnName) <> "0") Then
-                        'This is for testing
-                        'Console.WriteLine(r(c.ColumnName))
-
                         'Add item to the list
                         trackingNumbers.Add(r(c.ColumnName))
                     End If

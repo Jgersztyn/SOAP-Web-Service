@@ -59,12 +59,6 @@ DevTestGersztyn
  The user can request the data to be populated inside of the form by clicking the provided button
  </summary>
 </member>
-<member name="M:DevTestGersztyn.FormTrackingDisplay.ConnectionAttempt">
- <summary>
- Helper function used to create and validate the connection
- May not be necessary but used for testing
- </summary>
-</member>
 <member name="M:DevTestGersztyn.FormTrackingDisplay.MainForm_Load(System.Object,System.EventArgs)">
  <summary>
  Handles the initial loading of the form
