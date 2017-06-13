@@ -22,68 +22,76 @@ DevTestGersztyn
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="M:DevTestGersztyn.CreateRequest.GetTrackingNumbers">
+<member name="T:DevTestGersztyn.CreateRequest">
  <summary>
- Used to access lists containing all tracking numbers
+ The purpose of this class is to generate a SOAP request and pass it to the desired web service.
+ Provides formatting and parsing for the XML.
+ The resulting data from the request will be stored onto the machine's local database.
  </summary>
- <returns> A list containing all tracking numbers </returns>
+</member>
+<member name="M:DevTestGersztyn.CreateRequest.#ctor">
+ <summary>
+ Manages the SOAP request and data processed within it.
+ </summary>
 </member>
 <member name="M:DevTestGersztyn.CreateRequest.GenerateRequestString">
  <summary>
- Generate the request stream for this given request
+ Generate the request stream for this given request.
  </summary>
 </member>
 <member name="M:DevTestGersztyn.CreateRequest.Execute">
  <summary>
- Conducts a request to the webpage in order to receive the data from a HttpPOST
- All set-up is conducted, resulting in an XML-based response
+ Conducts a request to the webpage in order to receive the data from a HttpPOST.
+ All set-up is conducted, resulting in an XML-based response.
  </summary>
 </member>
 <member name="M:DevTestGersztyn.CreateRequest.CreateWebRequest">
  <summary>
- Used to reate a SOAP webrequest to the given URL
+ Used to reate a SOAP webrequest to the given URL.
  </summary>
- <returns> A web request with the necessary header </returns>
+ <returns> A web request with the necessary header. </returns>
 </member>
 <member name="M:DevTestGersztyn.CreateRequest.ParseXML(System.String)">
  <summary>
- Extract the data we need to from the XML request
- The data is then stored into a list
+ Extract the data we need to from the XML request.
+ The data is then stored into a list.
  </summary>
- <param name="resultStr"> The resulting XML request that is going to be parsed </param>
+ <param name="resultStr"> The resulting XML request that is going to be parsed. </param>
+</member>
+<member name="T:DevTestGersztyn.DataHandler">
+ <summary>
+ A simple class used to handle connections to the local database.
+ </summary>
+</member>
+<member name="M:DevTestGersztyn.DataHandler.LoadData(System.Collections.Generic.List{System.String})">
+ <summary>
+ Populates the database with the data gathered from the SOAP request.
+ </summary>
 </member>
 <member name="T:DevTestGersztyn.FormTrackingDisplay">
  <summary>
- A basic application used to generate a SOAP web request
- The application generates the request in the background and informs the user that data has been loaded
- The user can request the data to be populated inside of the form by clicking the provided button
+ A basic application used to generate a SOAP web request.
+ The application generates the request in the background and informs the user that data has been loaded.
+ The user can request the data to be populated inside of the form by clicking the provided button.
  </summary>
 </member>
 <member name="M:DevTestGersztyn.FormTrackingDisplay.MainForm_Load(System.Object,System.EventArgs)">
  <summary>
- Handles the initial loading of the form
- The main entry point of the application
- Note that the form is generated only after the SOAP reqeust is completed
- </summary>
-</member>
-<member name="M:DevTestGersztyn.FormTrackingDisplay.LoadFormData">
- <summary>
- Populates the database with the data based on the SOAP request
+ Handles the initial loading of the form.
+ The main entry point of the application.
+ Note that the form is generated only after the SOAP reqeust is completed.
  </summary>
 </member>
 <member name="M:DevTestGersztyn.FormTrackingDisplay.TrackingDataGridView_CellContentClick(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
  <summary>
- Generates the Data Grid to display tracking numbers
- </summary>
-</member>
-<member name="M:DevTestGersztyn.FormTrackingDisplay.InsertData(System.Int32,System.String)">
- <summary>
- Inserts test data into the local DB
+ Generates the Data Grid to display tracking numbers.
  </summary>
 </member>
 <member name="M:DevTestGersztyn.FormTrackingDisplay.DisplayButton_Click(System.Object,System.EventArgs)">
  <summary>
- Handles the Display Data Button on the form
+ Handles the Display Data Button on the form.
+ Once the button is clicked the data grid will be notified.
+ Data from the database will then be populated.
  </summary>
 </member>
 <member name="T:DevTestGersztyn.ResultDatabaseDataSet">

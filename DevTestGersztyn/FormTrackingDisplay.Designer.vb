@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormTrackingDisplay
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,14 +20,14 @@ Partial Class FormTrackingDisplay
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DisplayButton = New System.Windows.Forms.Button()
         Me.TrackingDataGridView = New System.Windows.Forms.DataGridView()
+        Me.TrackingNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResultDatabaseDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ResultDatabaseDataSet = New DevTestGersztyn.ResultDatabaseDataSet()
-        Me.TrackingNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.TrackingDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ResultDatabaseDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ResultDatabaseDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +61,13 @@ Partial Class FormTrackingDisplay
         Me.TrackingDataGridView.Size = New System.Drawing.Size(160, 200)
         Me.TrackingDataGridView.TabIndex = 1
         '
+        'TrackingNumber
+        '
+        Me.TrackingNumber.DataPropertyName = "TrackingNumber"
+        Me.TrackingNumber.HeaderText = "Tracking Number"
+        Me.TrackingNumber.Name = "TrackingNumber"
+        Me.TrackingNumber.ReadOnly = True
+        '
         'ResultDatabaseDataSetBindingSource
         '
         Me.ResultDatabaseDataSetBindingSource.DataSource = Me.ResultDatabaseDataSet
@@ -70,13 +77,6 @@ Partial Class FormTrackingDisplay
         '
         Me.ResultDatabaseDataSet.DataSetName = "ResultDatabaseDataSet"
         Me.ResultDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TrackingNumber
-        '
-        Me.TrackingNumber.DataPropertyName = "TrackingNumber"
-        Me.TrackingNumber.HeaderText = "Tracking Number"
-        Me.TrackingNumber.Name = "TrackingNumber"
-        Me.TrackingNumber.ReadOnly = True
         '
         'FormTrackingDisplay
         '
